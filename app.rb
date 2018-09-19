@@ -23,8 +23,9 @@ class Battle < Sinatra::Base
     erb :play
   end
 
-  post '/player1_attacks' do
-    session[:game].attack(0)
+  post '/attack' do
+    @game = session[:game]
+    @game.attack(@game.turn)
     redirect '/dead' if session[:game].game_over?
     redirect '/play'
   end
