@@ -25,7 +25,7 @@ class Battle < Sinatra::Base
 
   post '/player1_attacks' do
     session[:game].attack(0)
-    redirect '/dead' if session[:game].players[1].hp == 0
+    redirect '/dead' if session[:game].game_over?
     redirect '/play'
   end
 
