@@ -5,8 +5,15 @@
     <th><h1><%= @player2 %></h1></th>
   </tr>
   <tr>
-    <td><div class="hitpoints" id="player1"> 50 </div></td>
+    <td><div class="hitpoints" id="player1"> <%= @player1_hitpoints %> </div></td>
     <td></td>
-    <td><div class="hitpoints" id="player2"> 50 </div></td>
+    <td><div class="hitpoints" id="player2"> <%= @player2_hitpoints %> </div></td>
+  </tr>
+  <tr>
+    <td>
+      <form action='/player1_attacks' method="post">
+        <input type="submit" id='player_1_attack' value="ATTACK!"></input>
+      </form>
+    </td>
   </tr>
 </table>
