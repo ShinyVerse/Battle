@@ -10,4 +10,8 @@ class Player
   def update_hp
     @hp -= 10
   end
+
+  def attack(other_player)
+    other_player.update_hp
+  end 
 end
