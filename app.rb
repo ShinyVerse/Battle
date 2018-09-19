@@ -11,20 +11,20 @@ class Battle < Sinatra::Base
 
   post '/names' do
     p params
-    session[:player1] = Player.new(params[:player1])
-    session[:player2] = Player.new(params[:player2])
+    player1 = Player.new(params[:player1])
+    player2 = Player.new(params[:player2])
+    session[:game] = Game.new(player1, player2)
     redirect '/play'
   end
 
   get '/play' do
-    @player1 = session[:player1]
-    @player2 = session[:player2]
+    @game =  session[:game]
     erb :play
   end
 
   post '/player1_attacks' do
-    session[:player1].attack(session[:player2])
-    redirect '/dead' if session[:player2].hp == 0
+    session[:game].attack(1)
+    redirect '/dead' if @game.player2.hp == 0
     redirect '/play'
   end
 
