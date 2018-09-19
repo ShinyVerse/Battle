@@ -1,13 +1,13 @@
 <table>
   <tr>
-    <th><h1><%= @game.player1.name %></h1></th>
+    <th><h1><%= @game.players[0].name %></h1></th>
     <th><h2>vs.</h2></th>
-    <th><h1><%= @game.player2.name %></h1></th>
+    <th><h1><%= @game.players[1].name %></h1></th>
   </tr>
   <tr>
-    <td><div class="hitpoints" id="player1"> <%= @game.player1.hp %> </div></td>
+    <td><div class="hitpoints" id="player1"> <%= @game.players[0].hp %> </div></td>
     <td></td>
-    <td><div class="hitpoints" id="player2"> <%= @game.player2.hp %> </div></td>
+    <td><div class="hitpoints" id="player2"> <%= @game.players[1].hp %> </div></td>
   </tr>
   <tr>
     <td>

@@ -12,8 +12,4 @@ describe Player do
     expect(player.hp).to eq 40
   end
 
-  it "raises an error if the player is hit when dead" do
-    5.times { player.update_hp }
-    expect { player.update_hp }.to raise_error "They're already dead!"
-  end
 end

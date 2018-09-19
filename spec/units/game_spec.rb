@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  let(:misty) { double( 'Misty', name: 'Misty', hp: 50 )}
-  let(:ash) { double( 'Ash', name: 'Ash', hp: 50) }
+  let(:misty) { double( 'Misty', name: 'Misty', hp: 50, attack: true)}
+  let(:ash) { double( 'Ash', name: 'Ash', hp: 50, attack: true) }
   let(:game) { described_class.new(ash, misty) }
 
   context '#game_over?' do

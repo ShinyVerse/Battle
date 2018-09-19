@@ -10,6 +10,6 @@
    end
 
    def attack(index)
-     players[index].attacks(players[index-1])
+     players[index].attack(players[index-1])
    end
  end

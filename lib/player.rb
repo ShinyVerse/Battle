@@ -13,5 +13,5 @@ class Player
 
   def attack(other_player)
     other_player.update_hp
-  end 
+  end
 end

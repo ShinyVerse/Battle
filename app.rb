@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/player'
+require_relative 'lib/game'
 
 class Battle < Sinatra::Base
 
@@ -23,8 +24,8 @@ class Battle < Sinatra::Base
   end
 
   post '/player1_attacks' do
-    session[:game].attack(1)
-    redirect '/dead' if @game.player2.hp == 0
+    session[:game].attack(0)
+    redirect '/dead' if session[:game].players[1].hp == 0
     redirect '/play'
   end
 
