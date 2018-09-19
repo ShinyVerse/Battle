@@ -13,22 +13,23 @@ class Battle < Sinatra::Base
     p params
     session[:player1] = Player.new(params[:player1])
     session[:player2] = Player.new(params[:player2])
-    session[:player1_hitpoints] = 50
-    session[:player2_hitpoints] = 50
     redirect '/play'
   end
 
   get '/play' do
-    @player1_hitpoints = session[:player1_hitpoints]
-    @player2_hitpoints = session[:player2_hitpoints]
     @player1 = session[:player1]
     @player2 = session[:player2]
     erb :play
   end
 
   post '/player1_attacks' do
-    session[:player2_hitpoints] -= 10
+    session[:player2].update_hp
+    redirect '/dead' if session[:player2].hp == 0
     redirect '/play'
+  end
+
+  get "/dead" do
+    "STOP! THEY\'RE ALREADY DEAD!"
   end
 
   run! if app_file == $0
