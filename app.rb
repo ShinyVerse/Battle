@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class Battle < Sinatra::Base
 
-  enable :session
+  enable :sessions
 
   get '/' do
     'Testing infrastructure working!'

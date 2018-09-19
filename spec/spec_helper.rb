@@ -2,6 +2,7 @@ require './app'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'pry'
 
 ENV['RACK_ENV'] = 'test'
 
