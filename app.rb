@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'lib/player'
 
 class Battle < Sinatra::Base
 
@@ -10,8 +11,8 @@ class Battle < Sinatra::Base
 
   post '/names' do
     p params
-    session[:player1] = params[:player1]
-    session[:player2] = params[:player2]
+    session[:player1] = Player.new(params[:player1])
+    session[:player2] = Player.new(params[:player2])
     session[:player1_hitpoints] = 50
     session[:player2_hitpoints] = 50
     redirect '/play'
