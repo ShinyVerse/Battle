@@ -5,10 +5,6 @@ class Battle < Sinatra::Base
   enable :sessions
 
   get '/' do
-    'Testing infrastructure working!'
-  end
-
-  get '/form' do
     erb :index
   end
 

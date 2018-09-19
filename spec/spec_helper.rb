@@ -3,6 +3,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'pry'
+require_relative 'features/web_helpers.rb'
 
 ENV['RACK_ENV'] = 'test'
 
