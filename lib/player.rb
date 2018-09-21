@@ -8,7 +8,7 @@ class Player
   end
 
   def update_hp
-    @hp -= 10
+    @hp -= rand(0..15)
   end
 
   def attack(other_player)

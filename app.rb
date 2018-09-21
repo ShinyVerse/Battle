@@ -31,7 +31,8 @@ class Battle < Sinatra::Base
   end
 
   get "/dead" do
-    "STOP! THEY\'RE ALREADY DEAD!"
+    @game = session[:game]
+    "#{@game.winner_setter} wins!"
   end
 
   run! if app_file == $0

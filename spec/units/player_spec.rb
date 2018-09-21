@@ -7,9 +7,9 @@ describe Player do
     expect(player.name).to eq "Brock"
   end
 
-  it "has a reduce hitpoints method" do
-    player.update_hp
-    expect(player.hp).to eq 40
+  it 'should take away randomized hitpoints' do
+    srand(4000)
+    expect(player.update_hp).to eq 37
   end
 
 end
